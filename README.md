@@ -15,8 +15,8 @@
     - [Safety and Reliability](#safety-and-reliability)
     - [Fairness and Bias](#fairness-and-bias)
     - [Persona and Role](#persona-and-role)
-    - [Multilingual & Crosslingual](#multilingual--crosslingual)
   - [2. Improve Capability](#2-improve-capability)
+    - [Multilingualism](#multilingualism)
     - [Knowledge Management](#knowledge-management)
     - [Logic and Reasoning](#logic-and-reasoning)
   - [3. Improve Efficiency](#3-improve-efficiency)
@@ -145,7 +145,11 @@ data-dependent
 | **Personas as a way to model truthfulness in language models** | Residual Stream | Probing | - | ArXiv | 2025 | [Link](https://www.arxiv.org/abs/2310.18168) |
 | **Who's asking? User personas and the mechanics of latent misalignment** | Residual Stream | Causal Attribution | Vector Arithmetic | NeurIPS | 2024 | [Link](https://proceedings.neurips.cc/paper_files/paper/2024/file/e40d5118ee8f837729fa877add71c38f-Paper-Conference.pdf) |
 
-#### Multilingual & Crosslingual
+
+
+### 2. Improve Capability
+
+#### Multilingualism
 | Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
 | **Importance-based Neuron Allocation for Multilingual Neural Machine Translation** | Neuron | Magnitude Analysis | Amplitude Manipulation | ACL | 2021 | [Link](https://aclanthology.org/2021.acl-long.445/) |
@@ -169,8 +173,6 @@ data-dependent
 | **Language Mixing in Reasoning Language Models: Patterns, Impact, and Internal Causes** | Residual Stream | Vocab Projection | Vector Arithmetic | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.132/) |
 | **Mechanistic Understanding and Mitigation of Language Confusion in English-Centric Large Language Models** | Residual Stream | Vocab Projection | Vector Arithmetic | EMNLP | 2025 | [Link](https://aclanthology.org/2025.findings-emnlp.37/) |
 | **Tracing Multilingual Factual Knowledge Acquisition in Pretraining** | Residual Stream | Vocab Projection | Vector Arithmetic | EMNLP | 2025 | [Link](https://aclanthology.org/2025.findings-emnlp.113/) |
-
-### 2. Improve Capability
 
 #### Knowledge Management
 | Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
