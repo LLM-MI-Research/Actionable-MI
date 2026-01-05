@@ -1,4 +1,4 @@
-# Locate, Steer, and Improve: A Survey of Actionable Mechanistic Interpretability in Large Language Models
+# Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in Large Language Models
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -34,20 +34,20 @@
 Mechanistic Interpretability (MI) has evolved from merely observing model internals to actively intervening in them. This repository maintains a curated list of papers reviewed in our survey, focusing on **Actionable MI**—methods that not only explain but also improve Large Language Models.
 
 ## 🔥 Latest News
-- **[2025-XX-XX]** Our paper is available on arXiv! Check it out [here](https://arxiv.org/).
-- **[2025-XX-XX]** This repository is created to track the latest progress in Actionable MI.
+<!-- - **[2025-XX-XX]** Our paper is available on arXiv! Check it out [here](https://arxiv.org/). -->
+- **[2026-01-01]** This repository is created to track the latest progress in Actionable MI.
 
 ## 🏷 Taxonomy & Legends
 
 To help navigate the paper list, we use the following abbreviations for Objects, Localizing Methods, and Steering Methods:
 
 ### Interpretable Objects
-- **Token Embedding**: Embedding Matrix ($\mathbf{W}_E$), Token $i$ Embedding (Input)($\mathbf{x}^0_{i}$)
-- **Residual Stream**: Residual Stream State ($\mathbf{x}^l$), Intermediate State (Post-Attn) ($\mathbf{x}^{l, \text{mid}}$)
-- **Attention**: Attention Head Output ($\mathbf{h}_{attn}^{l,h}$), Attention Score Matrix ($\mathbf{A}^{l,h}$), MHA Block Output ($\mathbf{h}_{attn}^{l}$), or matrices (Q/K/V/O) ($\mathbf{W}_Q^{l,h}, \mathbf{W}_K^{l,h}, \mathbf{W}_V^{l,h},\mathbf{W}_O^{l,h} $)
-- **FFN**: Up Projection (Key) Matrix ($\mathbf{W}_{\text{up}}^l$), Down Projection (Value) Matrix ($\mathbf{W}_{\text{down}}^l$), FFN Block Output ($\mathbf{h}_{ffn}^{l}$)
-- **Neuron**: Neuron Activation ($\mathbf{s}^l$), $j$-th Neuron Key Weight ($\mathbf{k}_{j}^l$), $j$-th Neuron Value Weight ($\mathbf{v}_{j}^l$)
-- **Sparse AutoEncoder (SAE) Feature**: $j$-th Feature ($\mathbf{f}_j$), $j$-th Feature Activation ($a_j$)
+
+The core interpretable objects in our survey are shown below:
+
+<div align="center">
+  <img src="assets/notation.png" width="350">
+</div>
 
 ### Localizing Methods (How to find it?)
 - **Magnitude Analysis**: Weights or activation magnitude analysis, training-free but
