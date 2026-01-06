@@ -35,7 +35,7 @@ Mechanistic Interpretability (MI) has evolved from merely observing model intern
 
 ## 🔥 Latest News
 <!-- - **[2025-XX-XX]** Our paper is available on arXiv! Check it out [here](https://arxiv.org/). -->
-- **[2026-01-01]** This repository is created to track the latest progress in Actionable MI.
+- **[2026-1-3]** This repository is created to track the latest progress in Actionable MI.
 
 ## 🏷 Taxonomy & Legends
 
@@ -49,23 +49,25 @@ The core interpretable objects in our survey are shown below:
   <img src="assets/notation.png" width="350">
 </div>
 
+
 ### Localizing Methods (How to find it?)
 - **Magnitude Analysis**: Weights or activation magnitude analysis, training-free but
 data-dependent
-- **Causal Attribution**: Activation patching, ablation, causal tracing
-- **Gradient Detection**: Gradient-based attribution (e.g., EAP, EAP-IG), data-dependent and incurs extra compute
-- **Probing**: Linear probing, supervised property decoding
+- **Causal Attribution**: Patching and ablation
+- **Gradient Detection**: Data-dependent and incurs extra compute
+- **Probing**: Supervised property decoding
 - **Vocab Projection**: Logit Lens, direct semantic mapping
-- **Circuit Discovery**: Subnetwork identification
+- **Circuit Discovery**: Causal subnetwork identification
 
 ### Steering Methods (How to control it?)
-- **Amplitude Manipulation**: Scaling or ablation activations/weights
+- **Amplitude Manipulation**: Scaling and replace
 - **Targeted Optimization**: Weight editing, targeted fine-tuning
-- **Vector Arithmetic**: Steering vectors (activation addition, task vectors)
+- **Vector Arithmetic**: Steering via feature and task vectors
 
 ---
 
 ## 📑 Paper List
+> For studies employing multiple objects or localizing/steering methods, we annotate the primary tag.
 
 ### 1. Improve Alignment
 
@@ -108,7 +110,7 @@ data-dependent
 #### Fairness and Bias
 | Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
-| **Investigating Gender Bias in Language Models Using Causal Mediation Analysis** | Attention | Causal Attribution | Amplitude Manipulation | NeurIPS | 2020 | [Link](https://proceedings.neurips.cc/paper/2020/file/12e99602506e76d91361204d80843236-Paper.pdf) |
+| **Investigating Gender Bias in Language Models Using Causal Mediation Analysis** | Attention | Causal Attribution | Amplitude Manipulation | NeurIPS | 2020 | [Link](https://proceedings.neurips.cc/paper/2020/file/92650b2e92217715fe312e6fa7b90d82-Paper.pdf) |
 | **Identifying and Adapting Transformer-Components Responsible for Gender Bias in an English Language Model** | Attention | Causal Attribution | Targeted Optimization | ACLWS | 2023 | [Link](https://aclanthology.org/2023.blackboxnlp-1.29/) |
 | **Locating and Mitigating Gender Bias in Large Language Models** | FFN | Causal Attribution | Targeted Optimization | ICIC | 2024 | [Link](https://arxiv.org/abs/2403.14409) |
 | **Understanding and Mitigating Gender Bias in LLMs via Interpretable Neuron Editing** | Neuron | Circuit Discovery | Targeted Optimization | ArXiv | 2025 | [Link](https://arxiv.org/abs/2501.14457) |
@@ -142,12 +144,39 @@ data-dependent
 | **Steering Latent Traits, Not Learned Facts: An Empirical Study of Activation Control Limits** | Residual Stream | Causal Attribution | Vector Arithmetic | ArXiv | 2025 | [Link](https://arxiv.org/abs/2511.18284) |
 | **Personality Vector: Modulating Personality of Large Language Models by Model Merging** | Residual Stream | Causal Attribution | Vector Arithmetic | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.1253/) |
 | **Billy: Steering large language models via merging persona vectors for creative generation** | Residual Stream | Causal Attribution | Vector Arithmetic | ArXiv | 2025 | [Link](https://arxiv.org/abs/2510.10157) |
-| **Personas as a way to model truthfulness in language models** | Residual Stream | Probing | - | ArXiv | 2025 | [Link](https://www.arxiv.org/abs/2310.18168) |
+| **Personas as a way to model truthfulness in language models** | Residual Stream | Probing | - | EMNLP | 2024 | [Link](https://aclanthology.org/2024.emnlp-main.364/) |
 | **Who's asking? User personas and the mechanics of latent misalignment** | Residual Stream | Causal Attribution | Vector Arithmetic | NeurIPS | 2024 | [Link](https://proceedings.neurips.cc/paper_files/paper/2024/file/e40d5118ee8f837729fa877add71c38f-Paper-Conference.pdf) |
 
 
 
 ### 2. Improve Capability
+#### Logic and Reasoning
+| Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
+| :--- | :--- | :--- | :--- | :---: | :---: | :---: |
+| **Analyzing chain-of-thought prompting in large language models via gradient-based feature attributions** | Token Embedding | Gradient Detection | - | ICML | 2023 | [Link](https://arxiv.org/abs/2307.13339) |
+| **Electronic Circuit Principles of Large Language Models** | Token Embedding | Circuit Discovery | Targeted Optimization | ArXiv | 2025 | [Link](https://arxiv.org/abs/2502.03325) |
+| **Probabilistic Soundness Guarantees in LLM Reasoning Chains** | Token Embedding | Probing | - | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.382/) |
+| **Two Experts Are All You Need for Steering Thinking: Reinforcing Cognitive Effort in MoE Reasoning Models Without Additional Training** | FFN | Magnitude Analysis | Amplitude Manipulation | ArXiv | 2025 | [Link](https://doi.org/10.48550/arXiv.2505.14681) |
+| **How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning** | Attention | Magnitude Analysis | Amplitude Manipulation | EMNLP | 2024 | [Link](https://doi.org/10.18653/v1/2024.emnlp-main.192) |
+| **Interpreting and Improving Large Language Models in Arithmetic Calculation** | Attention | Causal Attribution | Targeted Optimization | ICML | 2024 | [Link](https://openreview.net/forum?id=CfOtiepP8s) |
+| **Interpreting Arithmetic Mechanism in Large Language Models through Comparative Neuron Analysis** | Attention | Causal Attribution | Targeted Optimization | EMNLP | 2024 | [Link](https://aclanthology.org/2024.emnlp-main.193/) |
+| **Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models** | Attention | Causal Attribution | Targeted Optimization | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.567/) |
+| **A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis** | FFN & Attention | Causal Attribution | - | EMNLP | 2023 | [Link](https://doi.org/10.18653/v1/2023.emnlp-main.435) |
+| **Uncovering the Interpretation of Large Language Models** | FFN & Attention | Causal Attribution | - | COMPSAC | 2024 | [Link](https://doi.org/10.1109/COMPSAC61105.2024.00143) |
+| **Understanding Addition in Transformers** | FFN & Attention | Causal Attribution | Amplitude Manipulation | ICLR | 2024 | [Link](https://openreview.net/forum?id=rIx1YXVWZb) |
+| **Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking** | FFN & Attention | Gradient Detection | Targeted Optimization | ACL | 2025 | [Link](https://aclanthology.org/2025.acl-long.1369/) |
+| **How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model** | FFN & Attention | Circuit Discovery | - | NeurIPS | 2023 | [Link](http://papers.nips.cc/paper\_files/paper/2023/hash/efbba7719cc5172d175240f24be11280-Abstract-Conference.html) |
+| **Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics** | FFN & Attention | Circuit Discovery | - | ICLR | 2025 | [Link](https://openreview.net/forum?id=O9YTt26r2P) |
+| **Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models** | SAE Feature | Magnitude Analysis | Amplitude Manipulation | ArXiv | 2025 | [Link](https://doi.org/10.48550/arXiv.2504.02821) |
+| **I Have Covered All the Bases Here: Interpreting Reasoning Features in Large Language Models via Sparse Autoencoders** | SAE Feature | Vocab Projection | Vector Arithmetic | ArXiv | 2025 | [Link](https://arxiv.org/abs/2503.18878) |
+| **Can we interpret latent reasoning using current mechanistic interpretability tools?** | Token Embedding | Causal Attribution | Amplitude Manipulation | Blog | 2025 | [Link](https://www.alignmentforum.org/posts/YGAimivLxycZcqRFR/can-we-interpret-latent-reasoning-using-current-mechanistic) |
+| **Internal states before wait modulate reasoning patterns** | SAE Feature | Magnitude Analysis | - | EMNLP | 2025 | [Link](https://aclanthology.org/2025.findings-emnlp.1012/) |
+| **Reasoning-Finetuning Repurposes Latent Representations in Base Models** | Residual Stream | Magnitude Analysis | Vector Arithmetic | ICML | 2025 | [Link](https://doi.org/10.48550/arXiv.2507.12638) |
+| **Hopping Too Late: Exploring the Limitations of Large Language Models on Multi-Hop Queries** | Residual Stream | Probing | - | EMNLP | 2024 | [Link](https://doi.org/10.18653/v1/2024.emnlp-main.781) |
+| **Physics of Language Models: Part 2.1, Grade-School Math and the Hidden Reasoning Process** | Residual Stream | Probing | - | ICLR | 2025 | [Link](https://openreview.net/forum?id=Tn5B6Udq3E) |
+| **Probing for Arithmetic Errors in Language Models** | Residual Stream | Probing | - | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.411/) |
+| **Eliciting Chain-of-Thought in Base LLMs via Gradient-Based Representation Optimization** | Residual Stream | Probing | Targeted Optimization | AAAI | 2026 | [Link](https://arxiv.org/abs/2511.19131) |
+| **Bottom-up Policy Optimization: Your Language Model Policy Secretly Contains Internal Policies** | Residual Stream | Vocab Projection | Targeted Optimization | ArXiv | 2025 | [Link](https://arxiv.org/abs/2512.19673v1) |
 
 #### Multilingualism
 | Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
@@ -167,7 +196,7 @@ data-dependent
 | **Do Llamas Work in English? On the Latent Language of Multilingual Transformers** | Residual Stream | Vocab Projection | Vector Arithmetic | ACL | 2024 | [Link](https://aclanthology.org/2024.acl-long.820/) |
 | **Exploring Alignment in Shared Cross-lingual Spaces** | Residual Stream | Magnitude Analysis | Vector Arithmetic | ACL | 2024 | [Link](https://aclanthology.org/2024.acl-long.344/) |
 | **Why do LLaVA Vision-Language Models Reply to Images in English?** | Residual Stream | Probing | Vector Arithmetic | EMNLP | 2024 | [Link](https://aclanthology.org/2024.findings-emnlp.783/) |
-| **ShifCon: Enhancing Non-Dominant Language Capabilities with a Shift-based Multilingual Contrastive Framework** | Residual Stream | Probing | Vector Arithmetic | ACL | 2025 | [Link](https://aclanthology.org/2025.acl-long.239/) |
+| **ShifCon: Enhancing Non-Dominant Language Capabilities with a Shift-based Multilingual Contrastive Framework** | Residual Stream | Magnitude Analysis | Vector Arithmetic | ACL | 2025 | [Link](https://aclanthology.org/2025.acl-long.239/) |
 | **Lost in Multilinguality: Dissecting Cross-lingual Factual Inconsistency in Transformer Language Models** | Residual Stream | Vocab Projection | Vector Arithmetic | ACL | 2025 | [Link](https://aclanthology.org/2025.acl-long.253/) |
 | **The Semantic Hub Hypothesis: Language Models Share Semantic Representations Across Languages and Modalities** | Residual Stream | Vocab Projection | - | ICLR | 2025 | [Link](https://openreview.net/forum?id=FrFQpAgnGE) |
 | **Language Mixing in Reasoning Language Models: Patterns, Impact, and Internal Causes** | Residual Stream | Vocab Projection | Vector Arithmetic | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.132/) |
@@ -177,8 +206,8 @@ data-dependent
 #### Knowledge Management
 | Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
-| **Locating and Editing Factual Associations in GPT** | FFN | Causal Attribution | Vector Arithmetic | NeurIPS | 2022 | [Link](https://openreview.net/forum?id=-h6WAS6eE4) |
-| **Mass-Editing Memory in a Transformer** | FFN | Causal Attribution | Vector Arithmetic | ICLR | 2023 | [Link](https://openreview.net/forum?id=MkbcAHIYgyS) |
+| **Locating and Editing Factual Associations in GPT** | FFN | Causal Attribution | Targeted Optimization | NeurIPS | 2022 | [Link](https://openreview.net/forum?id=-h6WAS6eE4) |
+| **Mass-Editing Memory in a Transformer** | FFN | Causal Attribution | Targeted Optimization | ICLR | 2023 | [Link](https://openreview.net/forum?id=MkbcAHIYgyS) |
 | **Joint Localization and Activation Editing for Low-Resource Fine-Tuning** | Attention | Magnitude Analysis | Targeted Optimization | ICML | 2025 | [Link](https://openreview.net/forum?id=Lllg9YjAFX) |
 | **Taming Knowledge Conflicts in Language Models** | Attention | Magnitude Analysis | Amplitude Manipulation | ICML | 2025 | [Link](https://openreview.net/forum?id=0cEZyhHEks) |
 | **Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding** | Attention | Magnitude Analysis | Amplitude Manipulation | ICML | 2025 | [Link](https://openreview.net/forum?id=1SMcxxQiSL) |
@@ -197,7 +226,7 @@ data-dependent
 | **Unveiling Linguistic Regions in Large Language Models** | FFN & Attention | Gradient Detection | Targeted Optimization | ACL | 2024 | [Link](https://aclanthology.org/2024.acl-long.338/) |
 | **Sens-Merging: Sensitivity-Guided Parameter Balancing for Merging Large Language Models** | FFN & Attention | Gradient Detection | Vector Arithmetic | ACL | 2025 | [Link](https://aclanthology.org/2025.findings-acl.984/) |
 | **Dissecting Recall of Factual Associations in Auto-Regressive Language Models** | FFN & Attention | Causal Attribution | - | EMNLP | 2023 | [Link](https://aclanthology.org/2023.emnlp-main.751.pdf) |
-| **Multilingual Knowledge Editing with Language-Agnostic Factual Neurons** | Neuron | Magnitude Analysis | Vector Arithmetic | COLING | 2025 | [Link](https://aclanthology.org/2025.coling-main.385/) |
+| **Multilingual Knowledge Editing with Language-Agnostic Factual Neurons** | Neuron | Magnitude Analysis | Targeted Optimization | COLING | 2025 | [Link](https://aclanthology.org/2025.coling-main.385/) |
 | **Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons** | Neuron | Gradient Detection | Amplitude Manipulation | AAAI | 2024 | [Link](https://ojs.aaai.org/index.php/AAAI/article/view/29735) |
 | **IRCAN: Mitigating Knowledge Conflicts in LLM Generation via Identifying and Reweighting Context-Aware Neurons** | Neuron | Gradient Detection | Amplitude Manipulation | NeurIPS | 2024 | [Link](http://papers.nips.cc/paper\_files/paper/2024/hash/08a9e28c96d016dd63903ab51cd085b0-Abstract-Conference.html) |
 | **Identifying Query-Relevant Neurons in Large Language Models for Long-Form Texts** | Neuron | Gradient Detection | Amplitude Manipulation | AAAI | 2025 | [Link](https://doi.org/10.1609/aaai.v39i22.34529) |
@@ -205,42 +234,14 @@ data-dependent
 | **SAEs Can Improve Unlearning: Dynamic Sparse Autoencoder Guardrails for Precision Unlearning in LLMs** | SAE Feature | Magnitude Analysis | Amplitude Manipulation | ICML | 2025 | [Link](https://openreview.net/pdf?id=8gFO7ebDLT) |
 | **Breaking Bad Tokens: Detoxification of LLMs Using Sparse Autoencoders** | SAE Feature | Magnitude Analysis | Amplitude Manipulation | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.641/) |
 | **Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models** | SAE Feature | Circuit Discovery | Amplitude Manipulation | ICLR | 2025 | [Link](https://arxiv.org/pdf/2403.19647) |
-| **Impact of Co-occurrence on Factual Knowledge of Large Language Models** | Residual Stream | Probing | Vector Arithmetic | EMNLP | 2023 | [Link](hhttps://aclanthology.org/2023.findings-emnlp.518.pdf) |
-| **Backward Lens: Projecting Language Model Gradients into the Vocabulary Space** | Residual Stream | Vocab Projection | Vector Arithmetic | EMNLP | 2024 | [Link](https://doi.org/10.18653/v1/2024.emnlp-main.142) |
+| **Impact of Co-occurrence on Factual Knowledge of Large Language Models** | Residual Stream | Probing | - | EMNLP | 2023 | [Link](https://aclanthology.org/2023.findings-emnlp.518.pdf) |
+| **Backward Lens: Projecting Language Model Gradients into the Vocabulary Space** | Residual Stream | Vocab Projection | Targeted Optimization | EMNLP | 2024 | [Link](https://doi.org/10.18653/v1/2024.emnlp-main.142) |
 | **ReFT: Representation Finetuning for Language Models** | Residual Stream | Causal Attribution | Targeted Optimization | NeurIPS | 2024 | [Link](https://proceedings.neurips.cc/paper_files/paper/2024/hash/75008a0fba53bf13b0bb3b7bff986e0e-Abstract-Conference.html) |
-| **Impact of Co-occurrence on Factual Knowledge of Large Language Models** | Residual Stream | Probing | - | EMNLP | 2023 | [Link](hhttps://aclanthology.org/2023.findings-emnlp.518.pdf) |
 | **Analysing the Residual Stream of Language Models Under Knowledge Conflicts** | Residual Stream | Probing | - | ArXiv | 2024 | [Link](https://arxiv.org/abs/2410.16090) |
 | **How Large Language Models Encode Context Knowledge? A Layer-Wise Probing Study** | Residual Stream | Probing | - | COLING | 2024 | [Link](https://aclanthology.org/2024.lrec-main.722.pdf) |
 | **Exploring Concept Depth: How Large Language Models Acquire Knowledge and Concept at Different Layers?** | Residual Stream | Probing | - | COLING | 2025 | [Link](https://aclanthology.org/2025.coling-main.37.pdf) |
 | **Transferring Linear Features Across Language Models With Model Stitching** | Residual Stream | Probing | Vector Arithmetic | NeurIPS | 2025 | [Link](https://openreview.net/forum?id=Qvvy0X63Fv) |
 
-#### Logic and Reasoning
-| Paper | Object | Localizing Method | Steering Method | Venue | Year | Link |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: |
-| **Analyzing chain-of-thought prompting in large language models via gradient-based feature attributions** | Token Embedding | Gradient Detection | - | ICML | 2023 | [Link](https://arxiv.org/abs/2307.13339) |
-| **ECM: A Unified Electronic Circuit Model for Explaining the Emergence of In-Context Learning and Chain-of-Thought in Large Language Model** | Token Embedding | Circuit Discovery | Targeted Optimization | ArXiv | 2025 | [Link](https://arxiv.org/abs/2502.03325) |
-| **Probabilistic Soundness Guarantees in LLM Reasoning Chains** | Token Embedding | Probing | - | EMNLP | 2025 | [Link](ttps://aclanthology.org/2025.emnlp-main.382/) |
-| **Two Experts Are All You Need for Steering Thinking: Reinforcing Cognitive Effort in MoE Reasoning Models Without Additional Training** | FFN | Magnitude Analysis | Amplitude Manipulation | ArXiv | 2025 | [Link](https://doi.org/10.48550/arXiv.2505.14681) |
-| **How do Large Language Models Learn In-Context? Query and Key Matrices of In-Context Heads are Two Towers for Metric Learning** | Attention | Magnitude Analysis | Amplitude Manipulation | EMNLP | 2024 | [Link](https://doi.org/10.18653/v1/2024.emnlp-main.192) |
-| **Interpreting and Improving Large Language Models in Arithmetic Calculation** | Attention | Causal Attribution | Targeted Optimization | ICML | 2024 | [Link](https://openreview.net/forum?id=CfOtiepP8s) |
-| **Interpreting Arithmetic Mechanism in Large Language Models through Comparative Neuron Analysis** | Attention | Causal Attribution | Targeted Optimization | EMNLP | 2024 | [Link](https://aclanthology.org/2024.emnlp-main.193/) |
-| **Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models** | Attention | Causal Attribution | Targeted Optimization | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.567/) |
-| **A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis** | FFN & Attention | Causal Attribution | - | EMNLP | 2023 | [Link](https://doi.org/10.18653/v1/2023.emnlp-main.435) |
-| **Uncovering the Interpretation of Large Language Models** | FFN & Attention | Causal Attribution | - | COMPSAC | 2024 | [Link](https://doi.org/10.1109/COMPSAC61105.2024.00143) |
-| **Understanding Addition in Transformers** | FFN & Attention | Causal Attribution | Amplitude Manipulation | ICLR | 2024 | [Link](https://openreview.net/forum?id=rIx1YXVWZb) |
-| **Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking** | FFN & Attention | Gradient Detection | Targeted Optimization | ACL | 2025 | [Link](https://aclanthology.org/2025.acl-long.1369/) |
-| **How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model** | FFN & Attention | Circuit Discovery | - | NeurIPS | 2023 | [Link](http://papers.nips.cc/paper\_files/paper/2023/hash/efbba7719cc5172d175240f24be11280-Abstract-Conference.html) |
-| **Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics** | FFN & Attention | Circuit Discovery | - | ICLR | 2025 | [Link](https://openreview.net/forum?id=O9YTt26r2P) |
-| **Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models** | SAE Feature | Magnitude Analysis | Amplitude Manipulation | ArXiv | 2025 | [Link](https://doi.org/10.48550/arXiv.2504.02821) |
-| **I Have Covered All the Bases Here: Interpreting Reasoning Features in Large Language Models via Sparse Autoencoders** | SAE Feature | Vocab Projection | Vector Arithmetic | ArXiv | 2025 | [Link](https://arxiv.org/abs/2503.18878) |
-| **Can we interpret latent reasoning using current mechanistic interpretability tools?** | Token Embedding | Causal Attribution | Amplitude Manipulation | Blog | 2025 | [Link](https://www.alignmentforum.org/posts/YGAimivLxycZcqRFR/can-we-interpret-latent-reasoning-using-current-mechanistic) |
-| **Internal states before wait modulate reasoning patterns** | SAE Feature | Causal Attribution | Vector Arithmetic | EMNLP | 2025 | [Link](https://aclanthology.org/2025.findings-emnlp.1012/) |
-| **Reasoning-Finetuning Repurposes Latent Representations in Base Models** | Residual Stream | Magnitude Analysis | Vector Arithmetic | ICML | 2025 | [Link](https://doi.org/10.48550/arXiv.2507.12638) |
-| **Hopping Too Late: Exploring the Limitations of Large Language Models on Multi-Hop Queries** | Residual Stream | Probing | - | EMNLP | 2024 | [Link](https://doi.org/10.18653/v1/2024.emnlp-main.781) |
-| **Physics of Language Models: Part 2.1, Grade-School Math and the Hidden Reasoning Process** | Residual Stream | Probing | - | ArXiv | 2025 | [Link](https://doi.org/10.48550/arXiv.2505.14681) |
-| **Probing for Arithmetic Errors in Language Models** | Residual Stream | Probing | - | EMNLP | 2025 | [Link](https://aclanthology.org/2025.emnlp-main.411/) |
-| **Eliciting Chain-of-Thought in Base LLMs via Gradient-Based Representation Optimization** | Residual Stream | Probing | Targeted Optimization | AAAI | 2026 | [Link](https://arxiv.org/abs/2511.19131) |
-| **Bottom-up Policy Optimization: Your Language Model Policy Secretly Contains Internal Policies** | Residual Stream | Vocab Projection | Targeted Optimization | ArXiv | 2025 | [Link](https://arxiv.org/abs/2512.19673v1) |
 
 ### 3. Improve Efficiency
 
@@ -296,8 +297,6 @@ data-dependent
 | **Neuron Specialization: Leveraging Intrinsic Task Modularity for Multilingual Machine Translation** | Neuron | Magnitude Analysis | - | EMNLP | 2024 | [Link](https://aclanthology.org/2024.emnlp-main.374/) |
 | **Unveiling visual perception in language models: An attention head analysis approach** | Attention | Magnitude Analysis | - | CVPR | 2025 | [Link](https://openaccess.thecvf.com/content/CVPR2025/papers/Bi_Unveiling_Visual_Perception_in_Language_Models_An_Attention_Head_Analysis_CVPR_2025_paper.pdf) |
 | **ShortGPT: Layers in Large Language Models are More Redundant Than You Expect** | Residual Stream | Magnitude Analysis | Amplitude Manipulation | ACL | 2025 | [Link](https://aclanthology.org/2025.findings-acl.1035/) |
-| **Awq: Activation-aware weight quantization for on-device llm compression and acceleration** | FFN & Attention | Magnitude Analysis | Amplitude Manipulation | MLSyS | 2024 | [Link](https://proceedings.mlsys.org/paper_files/paper/2024/file/42a452cbafa9dd64e9ba4aa95cc1ef21-Paper-Conference.pdf) |
-| **Quarot: Outlier-free 4-bit inference in rotated llms** | FFN & Attention | Magnitude Analysis | Amplitude Manipulation | NeurIPS | 2025 | [Link](https://dl.acm.org/doi/10.5555/3737916.3741096) |
 | **Layer-wise quantization: A pragmatic and effective method for quantizing llms beyond integer bit-levels** | Residual Stream | Magnitude Analysis | - | ArXiv | 2024 | [Link](https://arxiv.org/abs/2406.17415) |
 | **Towards Superior Quantization Accuracy: A Layer-sensitive Approach** | Residual Stream | Magnitude Analysis | - | ArXiv | 2025 | [Link](https://arxiv.org/abs/2503.06518) |
 | **Exploring Layer-wise Information Effectiveness for Post-Training Quantization in Small Language Models** | Residual Stream | Magnitude Analysis | - | ArXiv | 2025 | [Link](https://arxiv.org/abs/2508.03332) |
@@ -306,14 +305,15 @@ data-dependent
 | **Towards Building Efficient Sentence BERT Models using Layer Pruning** | Residual Stream | Magnitude Analysis | Amplitude Manipulation | ACL | 2024 | [Link](https://aclanthology.org/2024.paclic-1.68/) |
 | **Rotatekv: Accurate and robust 2-bit kv cache quantization for llms via outlier-aware adaptive rotations** | Attention | Magnitude Analysis | Amplitude Manipulation | IJCAI | 2025 | [Link](https://www.ijcai.org/proceedings/2025/690) |
 | **KVSink: Understanding and Enhancing the Preservation of Attention Sinks in KV Cache Quantization for LLMs** | FFN & Attention | Circuit Discovery | - | COLM | 2025 | [Link](https://openreview.net/forum?id=gIqb6zWZoO) |
-| **Efficient Streaming Language Models with Attention Sinks** | Attention | Magnitude Analysis | Amplitude Manipulation | ICLR | 2024 | [Link](https://openreview.net/forum?id=NG7sS51zVFO) |
-| **Smoothquant: Accurate and efficient post-training quantization for large language models** | FFN & Attention | Magnitude Analysis | Amplitude Manipulation | NeurIPS | 2022 | [Link](https://neurips.cc/virtual/2022/61716) |
+| **Efficient Streaming Language Models with Attention Sinks** | Attention | Magnitude Analysis | Amplitude Manipulation | ICLR | 2024 | [Link](https://openreview.net/forum?id=NG7sS51zVF) |
 | **Massive activations in large language models** | FFN & Attention | Magnitude Analysis | - | NeurIPS | 2024 | [Link](https://openreview.net/forum?id=F7aAhfitX6) |
 | **Systematic outliers in large language models** | FFN & Attention | Circuit Discovery | - | ICLR | 2025 | [Link](https://openreview.net/forum?id=rLX7Vyyzus) |
 | **Quantizable Transformers: Removing Outliers by Helping Attention Heads Do Nothing** | FFN & Attention | Circuit Discovery | - | NeurIPS | 2023 | [Link](https://proceedings.neurips.cc/paper_files/paper/2023/hash/edbcb7583fd8921dad78adecfe06a99b-Abstract-Conference.html) |
 | **The super weight in large language models** | FFN | Magnitude Analysis | Amplitude Manipulation | Arxiv | 2024 | [Link](https://arxiv.org/abs/2411.07191) |
 
-## 🌟 Citation
+
+
+<!-- ## 🌟 Citation
 
 If you find this survey or repository useful for your research, please cite:
 
@@ -324,9 +324,9 @@ If you find this survey or repository useful for your research, please cite:
   journal={arXiv preprint arXiv:25XX.XXXXX},
   year={2025}
 }
-```
+``` -->
 
-<!-- ## 📧 Contact
+## 📧 Contact
 Feel free to open an issue or contact us if you have any questions or want to include your work in this list!
 
-Corresponding Author: Hengyuan Zhang (hengyuan.zhang88@gmail.com) and Zhihao Zhang (zhihaozhang017@gmail.com) -->
+Corresponding Author: Hengyuan Zhang (hengyuan.zhang88@gmail.com) and Zhihao Zhang (zhihaozhang017@gmail.com)
